@@ -6,9 +6,10 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Filter } from 'lucide-react';
 import { FiltersSidebar } from '@/components/filters-sidebar';
+import type { FilterOptions } from '@/types/artist';
 
 // Define a default structure for filter options to prevent type errors
-const defaultFilterOptions = {
+const defaultFilterOptions: FilterOptions = {
   categories: [],
   locations: [],
   priceRange: { min: 0, max: 10000 },
