@@ -43,7 +43,7 @@ export default function ArtistsContainer({ children }: { children: React.ReactNo
       </main>
       <FiltersSidebar 
         open={isFiltersOpen} 
-        onClose={() => setIsFiltersOpen(false)} 
+        onOpenChange={setIsFiltersOpen} 
         filterOptions={defaultFilterOptions}
       />
     </div>
