@@ -13,16 +13,8 @@ export async function GET(request: Request) {
   const page = parseInt(searchParams.get('page') || '1');
   const limit = parseInt(searchParams.get('limit') || '10');
 
-  // Get filtered artists
-  const filteredArtists = getArtists({
-    categories,
-    locations,
-    minPrice: minPrice ? parseInt(minPrice) : undefined,
-    maxPrice: maxPrice ? parseInt(maxPrice) : undefined,
-    searchQuery,
-  });
-
-  // Get filter options
+  // Filtering is handled client-side, so we return all artists.
+  const filteredArtists = getArtists();
   const filterOptions = getFilterOptions();
 
   // Pagination
