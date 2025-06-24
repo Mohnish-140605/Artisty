@@ -16,6 +16,12 @@ const defaultFilterOptions = {
 
 export default function ArtistsContainer({ children }: { children: React.ReactNode }) {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [activeFilters, setActiveFilters] = useState({
+    categories: [],
+    locations: [],
+    minPrice: defaultFilterOptions.priceRange.min,
+    maxPrice: defaultFilterOptions.priceRange.max,
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -45,6 +51,8 @@ export default function ArtistsContainer({ children }: { children: React.ReactNo
         open={isFiltersOpen} 
         onOpenChange={setIsFiltersOpen} 
         filterOptions={defaultFilterOptions}
+        activeFilters={activeFilters}
+        onFiltersChange={setActiveFilters}
       />
     </div>
   );
